@@ -7,22 +7,9 @@ import type {
   DispatchRule,
   User,
   TaskStatus,
-  ApprovalStatus,
   RadarStat,
 } from '@/types';
-import {
-  generateMockTasks,
-  generateMockDispatchPlans,
-  generateMockDailyStats,
-  generateMockDispatchRules,
-  generateMockUsers,
-  getCurrentUser,
-  generateMockRadarStats,
-} from '@/utils/mock';
-
-const initialTasks = generateMockTasks();
-const initialAlerts = initialTasks.flatMap((t) => t.alerts);
-const initialRadarStats = generateMockRadarStats();
+import { api } from '@/api/client';
 
 interface AppState {
   tasks: SimulationTask[];
@@ -35,196 +22,157 @@ interface AppState {
   selectedTaskId: string | null;
   tasksPaused: boolean;
   radarStats: RadarStat[];
+  loading: boolean;
+  error: string | null;
 
+  hydrate: () => Promise<void>;
   setSelectedTask: (id: string | null) => void;
   getTask: (id: string) => SimulationTask | undefined;
-  getTaskAlerts: (taskId: string) => Alert[];
-  getPendingApprovals: () => SimulationTask[];
 
-  updateTaskStatus: (taskId: string, status: TaskStatus, progress?: number) => void;
-  reviewAlert: (alertId: string, reviewer: string, comment: string) => void;
-  approveByEngineer: (taskId: string, comment: string, score: number) => void;
-  approveByChief: (taskId: string, comment: string) => void;
-  rejectApproval: (taskId: string, comment: string) => void;
-  createDispatchPlan: (plan: Partial<DispatchPlan>) => void;
+  addNewTask: (task: Partial<SimulationTask>) => Promise<SimulationTask>;
+  updateTaskStatus: (taskId: string, status: TaskStatus, progress?: number) => Promise<void>;
+  runSimulation: (taskId: string) => Promise<{ ok: boolean; message?: string }>;
+
+  reviewAlert: (alertId: string, reviewer: string, comment: string) => Promise<void>;
+
+  approveByEngineer: (taskId: string, comment: string, score: number) => Promise<void>;
+  approveByChief: (taskId: string, comment: string) => Promise<void>;
+  rejectApproval: (taskId: string, comment: string) => Promise<void>;
+
+  createDispatchPlan: (plan: Partial<DispatchPlan>) => Promise<void>;
   toggleTasksPaused: () => void;
-  addNewTask: (task: Partial<SimulationTask>) => void;
+
+  uploadFile: (taskId: string, type: 'dem' | 'soil' | 'rainfall', file: File) => Promise<void>;
 }
 
-export const useAppStore = create<AppState>((set, get) => {
-  return {
-    tasks: initialTasks,
-    alerts: initialAlerts,
-    radarStats: initialRadarStats,
-    dispatchPlans: generateMockDispatchPlans(),
-    dailyStats: generateMockDailyStats(),
-    dispatchRules: generateMockDispatchRules(),
-    users: generateMockUsers(),
-    currentUser: getCurrentUser(),
-    selectedTaskId: initialTasks[0]?.id ?? null,
-    tasksPaused: false,
+const emptyUser: User = { id: '', name: '加载中', role: 'admin', email: '' };
 
-    setSelectedTask: (id) => set({ selectedTaskId: id }),
+export const useAppStore = create<AppState>((set, get) => ({
+  tasks: [],
+  alerts: [],
+  dispatchPlans: [],
+  dailyStats: [],
+  dispatchRules: [],
+  users: [],
+  currentUser: emptyUser,
+  selectedTaskId: null,
+  tasksPaused: false,
+  radarStats: [],
+  loading: false,
+  error: null,
 
-    getTask: (id) => get().tasks.find((t) => t.id === id),
+  async hydrate() {
+    set({ loading: true, error: null });
+    try {
+      const [tasks, alerts, plans, daily, rules, users, cur, radar, dev] = await Promise.all([
+        api.listTasks(),
+        api.listAlerts(),
+        api.listPlans(),
+        api.dailyStats(),
+        api.listRules(),
+        api.listUsers(),
+        api.currentUser(),
+        api.radarStats(),
+        api.deviationStats().catch(() => ({ topDeviation: [], globalPause: false })),
+      ]);
+      set({
+        tasks,
+        alerts,
+        dispatchPlans: plans,
+        dailyStats: daily,
+        dispatchRules: rules,
+        users,
+        currentUser: cur,
+        radarStats: radar,
+        selectedTaskId: tasks[0]?.id ?? null,
+        tasksPaused: !!dev?.globalPause,
+      });
+    } catch (e: any) {
+      set({ error: e.message || '加载数据失败' });
+    } finally {
+      set({ loading: false });
+    }
+  },
 
-    getTaskAlerts: (taskId) => get().alerts.filter((a) => a.taskId === taskId),
+  setSelectedTask: (id) => set({ selectedTaskId: id }),
+  getTask: (id) => get().tasks.find((t) => t.id === id),
 
-    getPendingApprovals: () =>
-      get().tasks.filter(
-        (t) =>
-          t.approval &&
-          (t.approval.status === 'engineer_pending' || t.approval.status === 'chief_pending')
-      ),
+  async addNewTask(task) {
+    const created = await api.createTask({
+      name: task.name,
+      basinName: task.basinName,
+      basinArea: task.basinArea,
+      rainfallReturnPeriod: task.rainfallReturnPeriod,
+      timeWindow: task.timeWindow,
+      parameters: task.parameters,
+    });
+    set((state) => ({ tasks: [created, ...state.tasks], selectedTaskId: created.id }));
+    return created;
+  },
 
-    updateTaskStatus: (taskId, status, progress) =>
+  async updateTaskStatus(taskId, status, progress) {
+    await api.updateTaskStatus(taskId, status, progress ?? 0);
+    set((state) => ({
+      tasks: state.tasks.map((t) => (t.id === taskId ? { ...t, status, progress: progress ?? t.progress } : t)),
+    }));
+  },
+
+  async runSimulation(taskId) {
+    try {
       set((state) => ({
-        tasks: state.tasks.map((t) =>
-          t.id === taskId
-            ? { ...t, status, progress: progress ?? t.progress }
-            : t
-        ),
-      })),
-
-    reviewAlert: (alertId, reviewer, comment) =>
-      set((state) => {
-        const now = new Date().toISOString();
-        return {
-          alerts: state.alerts.map((a) =>
-            a.id === alertId
-              ? {
-                  ...a,
-                  reviewed: true,
-                  reviewedBy: reviewer,
-                  reviewedAt: now,
-                  reviewComment: comment,
-                }
-              : a
-          ),
-          tasks: state.tasks.map((t) => ({
-            ...t,
-            alerts: t.alerts.map((a) =>
-              a.id === alertId
-                ? {
-                    ...a,
-                    reviewed: true,
-                    reviewedBy: reviewer,
-                    reviewedAt: now,
-                    reviewComment: comment,
-                  }
-                : a
-            ),
-          })),
-        };
-      }),
-
-    approveByEngineer: (taskId, comment, score) =>
+        tasks: state.tasks.map((t) => (t.id === taskId ? { ...t, status: 'preprocessing', progress: 10 } : t)),
+      }));
+      const result = await api.runSimulation(taskId);
+      const tasks = await api.listTasks();
+      const alerts = await api.listAlerts();
+      set({ tasks, alerts });
+      return { ok: true, message: `模拟完成，洪峰流量 ${result.result?.peakDischarge} m³/s，触发 ${result.alertsGenerated} 条预警` };
+    } catch (e: any) {
       set((state) => ({
-        tasks: state.tasks.map((t) => {
-          if (t.id !== taskId || !t.approval) return t;
-          return {
-            ...t,
-            approval: {
-              ...t.approval,
-              engineerComment: comment,
-              accuracyScore: score,
-              engineerApprovedAt: new Date().toISOString(),
-              status: 'chief_pending' as ApprovalStatus,
-            },
-          };
-        }),
-      })),
+        tasks: state.tasks.map((t) => (t.id === taskId ? { ...t, status: 'error' } : t)),
+      }));
+      return { ok: false, message: e.message || '模拟失败' };
+    }
+  },
 
-    approveByChief: (taskId, comment) =>
-      set((state) => ({
-        tasks: state.tasks.map((t) => {
-          if (t.id !== taskId || !t.approval) return t;
-          return {
-            ...t,
-            approval: {
-              ...t.approval,
-              chiefComment: comment,
-              chiefApprovedAt: new Date().toISOString(),
-              chiefName: get().currentUser.name,
-              chiefId: get().currentUser.id,
-              status: 'approved' as ApprovalStatus,
-            },
-          };
-        }),
-      })),
+  async reviewAlert(alertId, reviewer, comment) {
+    await api.reviewAlert(alertId, reviewer, comment);
+    const updated = await api.listAlerts();
+    const tasks = await api.listTasks();
+    set({ alerts: updated, tasks });
+  },
 
-    rejectApproval: (taskId, comment) =>
-      set((state) => ({
-        tasks: state.tasks.map((t) => {
-          if (t.id !== taskId || !t.approval) return t;
-          return {
-            ...t,
-            approval: {
-              ...t.approval,
-              chiefComment: comment,
-              status: 'rejected' as ApprovalStatus,
-            },
-          };
-        }),
-      })),
+  async approveByEngineer(taskId, comment, score) {
+    const { currentUser } = get();
+    await api.approveByEngineer(taskId, currentUser.id, currentUser.name, comment, score);
+    const tasks = await api.listTasks();
+    set({ tasks });
+  },
 
-    createDispatchPlan: (plan) =>
-      set((state) => ({
-        dispatchPlans: [
-          {
-            id: Math.random().toString(36).slice(2, 10),
-            taskId: plan.taskId ?? '',
-            taskName: plan.taskName ?? '',
-            alertId: plan.alertId ?? '',
-            type: plan.type ?? 'reservoir',
-            reservoirName: plan.reservoirName,
-            releaseRate: plan.releaseRate ?? 0,
-            diversionArea: plan.diversionArea,
-            diversionVolume: plan.diversionVolume ?? 0,
-            estimatedEffect: plan.estimatedEffect ?? '',
-            createdAt: new Date().toISOString(),
-            status: 'draft' as ApprovalStatus,
-          },
-          ...state.dispatchPlans,
-        ],
-      })),
+  async approveByChief(taskId, comment) {
+    const { currentUser } = get();
+    await api.approveByChief(taskId, currentUser.id, currentUser.name, comment);
+    const tasks = await api.listTasks();
+    set({ tasks });
+  },
 
-    toggleTasksPaused: () => set((state) => ({ tasksPaused: !state.tasksPaused })),
+  async rejectApproval(taskId, comment) {
+    await api.rejectApproval(taskId, comment);
+    const tasks = await api.listTasks();
+    set({ tasks });
+  },
 
-    addNewTask: (task) =>
-      set((state) => {
-        const newTask: SimulationTask = {
-          id: `task-${Date.now()}`,
-          name: task.name ?? '新建模拟任务',
-          basinName: task.basinName ?? '未命名流域',
-          basinArea: task.basinArea ?? 1000,
-          createdAt: new Date().toISOString(),
-          status: 'pending',
-          progress: 5,
-          rainfallReturnPeriod: task.rainfallReturnPeriod ?? 10,
-          timeWindow: task.timeWindow ?? '2026-06-01 ~ 2026-06-07',
-          parameters: task.parameters ?? {
-            demResolution: 30,
-            soilType: '壤土',
-            cnValue: 75,
-            initialLoss: 10,
-            recessionCoefficient: 0.92,
-            routingVelocity: 2.0,
-            manningN: 0.04,
-          },
-          files: task.files ?? [],
-          alerts: [],
-          sections: [],
-          logs: [
-            {
-              timestamp: new Date().toISOString(),
-              stage: 'pending',
-              message: '任务已创建，等待数据校验',
-              type: 'info',
-            },
-          ],
-        };
-        return { tasks: [newTask, ...state.tasks], selectedTaskId: newTask.id };
-      }),
-  };
-});
+  async createDispatchPlan(plan) {
+    await api.createPlan(plan);
+    const plans = await api.listPlans();
+    set({ dispatchPlans: plans });
+  },
+
+  toggleTasksPaused: () => set((state) => ({ tasksPaused: !state.tasksPaused })),
+
+  async uploadFile(taskId, type, file) {
+    await api.uploadFile(taskId, type, file);
+    const tasks = await api.listTasks();
+    set({ tasks });
+  },
+}));

@@ -1,0 +1,819 @@
+{
+  "users": [
+    {
+      "id": "u-hydrologist",
+      "name": "李值班",
+      "role": "hydrologist",
+      "email": "lizhiban@water.gov.cn",
+      "avatar": null
+    },
+    {
+      "id": "u-engineer",
+      "name": "王工程师",
+      "role": "engineer",
+      "email": "wanggcs@water.gov.cn",
+      "avatar": null
+    },
+    {
+      "id": "u-chief",
+      "name": "陈总工",
+      "role": "chief",
+      "email": "chenzg@water.gov.cn",
+      "avatar": null
+    },
+    {
+      "id": "u-commander",
+      "name": "赵指挥",
+      "role": "commander",
+      "email": "zhaozh@water.gov.cn",
+      "avatar": null
+    },
+    {
+      "id": "u-scientist",
+      "name": "孙首席",
+      "role": "scientist",
+      "email": "sunshouxi@water.gov.cn",
+      "avatar": null
+    },
+    {
+      "id": "u-admin",
+      "name": "张明华",
+      "role": "admin",
+      "email": "zhangmh@water.gov.cn",
+      "avatar": null
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-0",
+      "name": "嘉陵江武胜段·50年一遇模拟",
+      "basin_name": "嘉陵江武胜段",
+      "basin_area": 23500,
+      "created_at": "2026-06-04T05:49:29.459Z",
+      "status": "completed",
+      "progress": 100,
+      "rainfall_return_period": 50,
+      "time_window": "2026-06-01 ~ 2026-06-04",
+      "parameters_json": "{\"demResolution\":30,\"soilType\":\"壤土\",\"cnValue\":72,\"initialLoss\":8,\"recessionCoefficient\":0.92,\"routingVelocity\":2,\"manningN\":0.04}",
+      "result_json": "{\"id\":\"r-0\",\"taskId\":\"task-0\",\"peakDischarge\":9000,\"peakTime\":\"2026-06-06T15:49:29.459Z\",\"totalRunoffDepth\":160,\"floodVolume\":32400,\"inundationArea\":2820,\"hydrograph\":[{\"time\":\"2026-06-03T17:49:29.459Z\",\"value\":1.1},{\"time\":\"2026-06-03T18:49:29.459Z\",\"value\":2},{\"time\":\"2026-06-03T19:49:29.459Z\",\"value\":3.5},{\"time\":\"2026-06-03T20:49:29.459Z\",\"value\":6.1},{\"time\":\"2026-06-03T21:49:29.459Z\",\"value\":10.4},{\"time\":\"2026-06-03T22:49:29.459Z\",\"value\":17.4},{\"time\":\"2026-06-03T23:49:29.459Z\",\"value\":28.4},{\"time\":\"2026-06-04T00:49:29.459Z\",\"value\":45.4},{\"time\":\"2026-06-04T01:49:29.459Z\",\"value\":71.2},{\"time\":\"2026-06-04T02:49:29.459Z\",\"value\":109.4},{\"time\":\"2026-06-04T03:49:29.459Z\",\"value\":164.8},{\"time\":\"2026-06-04T04:49:29.459Z\",\"value\":243.5},{\"time\":\"2026-06-04T05:49:29.459Z\",\"value\":352.5},{\"time\":\"2026-06-04T06:49:29.459Z\",\"value\":500.2},{\"time\":\"2026-06-04T07:49:29.459Z\",\"value\":695.7},{\"time\":\"2026-06-04T08:49:29.459Z\",\"value\":948.6},{\"time\":\"2026-06-04T09:49:29.459Z\",\"value\":1267.7},{\"time\":\"2026-06-04T10:49:29.459Z\",\"value\":1660.7},{\"time\":\"2026-06-04T11:49:29.459Z\",\"value\":2132.3},{\"time\":\"2026-06-04T12:49:29.459Z\",\"value\":2683.8},{\"time\":\"2026-06-04T13:49:29.459Z\",\"value\":3310.9},{\"time\":\"2026-06-04T14:49:29.459Z\",\"value\":4003.7},{\"time\":\"2026-06-04T15:49:29.459Z\",\"value\":4745.6},{\"time\":\"2026-06-04T16:49:29.459Z\",\"value\":5513.6},{\"time\":\"2026-06-04T17:49:29.459Z\",\"value\":6279.1},{\"time\":\"2026-06-04T18:49:29.459Z\",\"value\":7009.2},{\"time\":\"2026-06-04T19:49:29.459Z\",\"value\":7669.3},{\"time\":\"2026-06-04T20:49:29.459Z\",\"value\":8225.4},{\"time\":\"2026-06-04T21:49:29.459Z\",\"value\":8647.1},{\"time\":\"2026-06-04T22:49:29.459Z\",\"value\":8910.4},{\"time\":\"2026-06-04T23:49:29.459Z\",\"value\":9000},{\"time\":\"2026-06-05T00:49:29.459Z\",\"value\":8910.4},{\"time\":\"2026-06-05T01:49:29.459Z\",\"value\":8647.1},{\"time\":\"2026-06-05T02:49:29.459Z\",\"value\":8225.4},{\"time\":\"2026-06-05T03:49:29.459Z\",\"value\":7669.3},{\"time\":\"2026-06-05T04:49:29.459Z\",\"value\":7009.2},{\"time\":\"2026-06-05T05:49:29.459Z\",\"value\":6279.1},{\"time\":\"2026-06-05T06:49:29.459Z\",\"value\":5513.6},{\"time\":\"2026-06-05T07:49:29.459Z\",\"value\":4745.6},{\"time\":\"2026-06-05T08:49:29.459Z\",\"value\":4003.7},{\"time\":\"2026-06-05T09:49:29.459Z\",\"value\":3310.9},{\"time\":\"2026-06-05T10:49:29.459Z\",\"value\":2683.8},{\"time\":\"2026-06-05T11:49:29.459Z\",\"value\":2132.3},{\"time\":\"2026-06-05T12:49:29.459Z\",\"value\":1660.7},{\"time\":\"2026-06-05T13:49:29.459Z\",\"value\":1267.7},{\"time\":\"2026-06-05T14:49:29.459Z\",\"value\":948.6},{\"time\":\"2026-06-05T15:49:29.459Z\",\"value\":695.7},{\"time\":\"2026-06-05T16:49:29.459Z\",\"value\":500.2},{\"time\":\"2026-06-05T17:49:29.459Z\",\"value\":352.5},{\"time\":\"2026-06-05T18:49:29.459Z\",\"value\":243.5},{\"time\":\"2026-06-05T19:49:29.459Z\",\"value\":164.8},{\"time\":\"2026-06-05T20:49:29.459Z\",\"value\":109.4},{\"time\":\"2026-06-05T21:49:29.459Z\",\"value\":71.2},{\"time\":\"2026-06-05T22:49:29.459Z\",\"value\":45.4},{\"time\":\"2026-06-05T23:49:29.459Z\",\"value\":28.4},{\"time\":\"2026-06-06T00:49:29.459Z\",\"value\":17.4},{\"time\":\"2026-06-06T01:49:29.459Z\",\"value\":10.4},{\"time\":\"2026-06-06T02:49:29.459Z\",\"value\":6.1},{\"time\":\"2026-06-06T03:49:29.459Z\",\"value\":3.5},{\"time\":\"2026-06-06T04:49:29.459Z\",\"value\":2},{\"time\":\"2026-06-06T05:49:29.459Z\",\"value\":1.1},{\"time\":\"2026-06-06T06:49:29.459Z\",\"value\":0.6},{\"time\":\"2026-06-06T07:49:29.459Z\",\"value\":0.3},{\"time\":\"2026-06-06T08:49:29.459Z\",\"value\":0.2},{\"time\":\"2026-06-06T09:49:29.459Z\",\"value\":0.1},{\"time\":\"2026-06-06T10:49:29.459Z\",\"value\":0},{\"time\":\"2026-06-06T11:49:29.459Z\",\"value\":0},{\"time\":\"2026-06-06T12:49:29.459Z\",\"value\":0},{\"time\":\"2026-06-06T13:49:29.459Z\",\"value\":0},{\"time\":\"2026-06-06T14:49:29.459Z\",\"value\":0},{\"time\":\"2026-06-06T15:49:29.459Z\",\"value\":0},{\"time\":\"2026-06-06T16:49:29.459Z\",\"value\":0}],\"inundationMap\":[{\"x\":0,\"y\":0,\"depth\":2.49},{\"x\":1,\"y\":0,\"depth\":1.5},{\"x\":2,\"y\":0,\"depth\":1.58},{\"x\":3,\"y\":0,\"depth\":2.83},{\"x\":4,\"y\":0,\"depth\":1.37},{\"x\":0,\"y\":1,\"depth\":3.2},{\"x\":1,\"y\":1,\"depth\":0.35},{\"x\":2,\"y\":1,\"depth\":2.47},{\"x\":3,\"y\":1,\"depth\":0.91},{\"x\":4,\"y\":1,\"depth\":2.75},{\"x\":0,\"y\":2,\"depth\":2.83},{\"x\":1,\"y\":2,\"depth\":0.5},{\"x\":2,\"y\":2,\"depth\":2.1},{\"x\":3,\"y\":2,\"depth\":2.53},{\"x\":4,\"y\":2,\"depth\":1.33},{\"x\":0,\"y\":3,\"depth\":0.9},{\"x\":1,\"y\":3,\"depth\":3.16},{\"x\":2,\"y\":3,\"depth\":2.9},{\"x\":3,\"y\":3,\"depth\":1.03},{\"x\":4,\"y\":3,\"depth\":2.34},{\"x\":0,\"y\":4,\"depth\":2.07},{\"x\":1,\"y\":4,\"depth\":2.13},{\"x\":2,\"y\":4,\"depth\":1.58},{\"x\":3,\"y\":4,\"depth\":2.42},{\"x\":4,\"y\":4,\"depth\":2.9}],\"peakProbability\":[{\"range\":\"<500\",\"probability\":0.08,\"count\":2},{\"range\":\"500-1000\",\"probability\":0.22,\"count\":5},{\"range\":\"1000-2000\",\"probability\":0.41,\"count\":9},{\"range\":\"2000-3000\",\"probability\":0.2,\"count\":4},{\"range\":\">3000\",\"probability\":0.09,\"count\":2}],\"completedAt\":\"2026-06-06T17:49:29.459Z\"}",
+      "deviation_rate": 0.08,
+      "logs_json": "[{\"timestamp\":\"2026-06-04T05:49:29.459Z\",\"stage\":\"pending\",\"message\":\"任务已创建\",\"type\":\"info\"},{\"timestamp\":\"2026-06-06T12:49:29.459Z\",\"stage\":\"preprocessing\",\"message\":\"数据预处理完成，已校验 DEM 与土壤文件\",\"type\":\"success\"},{\"timestamp\":\"2026-06-06T16:49:29.459Z\",\"stage\":\"completed\",\"message\":\"模拟完成，洪峰流量 9000 m³/s\",\"type\":\"success\"}]"
+    },
+    {
+      "id": "task-1",
+      "name": "涪江北碚段·100年一遇模拟",
+      "basin_name": "涪江北碚段",
+      "basin_area": 15800,
+      "created_at": "2026-06-04T11:49:29.464Z",
+      "status": "completed",
+      "progress": 100,
+      "rainfall_return_period": 100,
+      "time_window": "2026-06-01 ~ 2026-06-04",
+      "parameters_json": "{\"demResolution\":30,\"soilType\":\"壤土\",\"cnValue\":75,\"initialLoss\":8,\"recessionCoefficient\":0.92,\"routingVelocity\":2,\"manningN\":0.04}",
+      "result_json": "{\"id\":\"r-1\",\"taskId\":\"task-1\",\"peakDischarge\":18037,\"peakTime\":\"2026-06-06T15:49:29.464Z\",\"totalRunoffDepth\":320,\"floodVolume\":64933.2,\"inundationArea\":1896,\"hydrograph\":[{\"time\":\"2026-06-03T17:49:29.464Z\",\"value\":2.2},{\"time\":\"2026-06-03T18:49:29.464Z\",\"value\":4},{\"time\":\"2026-06-03T19:49:29.464Z\",\"value\":7.1},{\"time\":\"2026-06-03T20:49:29.464Z\",\"value\":12.3},{\"time\":\"2026-06-03T21:49:29.464Z\",\"value\":20.9},{\"time\":\"2026-06-03T22:49:29.464Z\",\"value\":34.8},{\"time\":\"2026-06-03T23:49:29.464Z\",\"value\":56.8},{\"time\":\"2026-06-04T00:49:29.464Z\",\"value\":90.9},{\"time\":\"2026-06-04T01:49:29.464Z\",\"value\":142.6},{\"time\":\"2026-06-04T02:49:29.464Z\",\"value\":219.2},{\"time\":\"2026-06-04T03:49:29.464Z\",\"value\":330.4},{\"time\":\"2026-06-04T04:49:29.464Z\",\"value\":487.9},{\"time\":\"2026-06-04T05:49:29.464Z\",\"value\":706.4},{\"time\":\"2026-06-04T06:49:29.464Z\",\"value\":1002.4},{\"time\":\"2026-06-04T07:49:29.464Z\",\"value\":1394.3},{\"time\":\"2026-06-04T08:49:29.464Z\",\"value\":1901.1},{\"time\":\"2026-06-04T09:49:29.464Z\",\"value\":2540.7},{\"time\":\"2026-06-04T10:49:29.464Z\",\"value\":3328.2},{\"time\":\"2026-06-04T11:49:29.464Z\",\"value\":4273.5},{\"time\":\"2026-06-04T12:49:29.464Z\",\"value\":5378.6},{\"time\":\"2026-06-04T13:49:29.464Z\",\"value\":6635.4},{\"time\":\"2026-06-04T14:49:29.464Z\",\"value\":8023.9},{\"time\":\"2026-06-04T15:49:29.464Z\",\"value\":9510.8},{\"time\":\"2026-06-04T16:49:29.464Z\",\"value\":11049.9},{\"time\":\"2026-06-04T17:49:29.464Z\",\"value\":12584},{\"time\":\"2026-06-04T18:49:29.464Z\",\"value\":14047.2},{\"time\":\"2026-06-04T19:49:29.464Z\",\"value\":15370.1},{\"time\":\"2026-06-04T20:49:29.464Z\",\"value\":16484.6},{\"time\":\"2026-06-04T21:49:29.464Z\",\"value\":17329.8},{\"time\":\"2026-06-04T22:49:29.464Z\",\"value\":17857.5},{\"time\":\"2026-06-04T23:49:29.464Z\",\"value\":18037},{\"time\":\"2026-06-05T00:49:29.464Z\",\"value\":17857.5},{\"time\":\"2026-06-05T01:49:29.464Z\",\"value\":17329.8},{\"time\":\"2026-06-05T02:49:29.465Z\",\"value\":16484.6},{\"time\":\"2026-06-05T03:49:29.465Z\",\"value\":15370.1},{\"time\":\"2026-06-05T04:49:29.465Z\",\"value\":14047.2},{\"time\":\"2026-06-05T05:49:29.465Z\",\"value\":12584},{\"time\":\"2026-06-05T06:49:29.465Z\",\"value\":11049.9},{\"time\":\"2026-06-05T07:49:29.465Z\",\"value\":9510.8},{\"time\":\"2026-06-05T08:49:29.465Z\",\"value\":8023.9},{\"time\":\"2026-06-05T09:49:29.465Z\",\"value\":6635.4},{\"time\":\"2026-06-05T10:49:29.465Z\",\"value\":5378.6},{\"time\":\"2026-06-05T11:49:29.465Z\",\"value\":4273.5},{\"time\":\"2026-06-05T12:49:29.465Z\",\"value\":3328.2},{\"time\":\"2026-06-05T13:49:29.465Z\",\"value\":2540.7},{\"time\":\"2026-06-05T14:49:29.465Z\",\"value\":1901.1},{\"time\":\"2026-06-05T15:49:29.465Z\",\"value\":1394.3},{\"time\":\"2026-06-05T16:49:29.465Z\",\"value\":1002.4},{\"time\":\"2026-06-05T17:49:29.465Z\",\"value\":706.4},{\"time\":\"2026-06-05T18:49:29.465Z\",\"value\":487.9},{\"time\":\"2026-06-05T19:49:29.465Z\",\"value\":330.4},{\"time\":\"2026-06-05T20:49:29.465Z\",\"value\":219.2},{\"time\":\"2026-06-05T21:49:29.465Z\",\"value\":142.6},{\"time\":\"2026-06-05T22:49:29.465Z\",\"value\":90.9},{\"time\":\"2026-06-05T23:49:29.465Z\",\"value\":56.8},{\"time\":\"2026-06-06T00:49:29.465Z\",\"value\":34.8},{\"time\":\"2026-06-06T01:49:29.465Z\",\"value\":20.9},{\"time\":\"2026-06-06T02:49:29.465Z\",\"value\":12.3},{\"time\":\"2026-06-06T03:49:29.465Z\",\"value\":7.1},{\"time\":\"2026-06-06T04:49:29.465Z\",\"value\":4},{\"time\":\"2026-06-06T05:49:29.465Z\",\"value\":2.2},{\"time\":\"2026-06-06T06:49:29.465Z\",\"value\":1.2},{\"time\":\"2026-06-06T07:49:29.465Z\",\"value\":0.6},{\"time\":\"2026-06-06T08:49:29.465Z\",\"value\":0.3},{\"time\":\"2026-06-06T09:49:29.465Z\",\"value\":0.2},{\"time\":\"2026-06-06T10:49:29.465Z\",\"value\":0.1},{\"time\":\"2026-06-06T11:49:29.465Z\",\"value\":0},{\"time\":\"2026-06-06T12:49:29.465Z\",\"value\":0},{\"time\":\"2026-06-06T13:49:29.465Z\",\"value\":0},{\"time\":\"2026-06-06T14:49:29.465Z\",\"value\":0},{\"time\":\"2026-06-06T15:49:29.465Z\",\"value\":0},{\"time\":\"2026-06-06T16:49:29.465Z\",\"value\":0}],\"inundationMap\":[{\"x\":0,\"y\":0,\"depth\":1.72},{\"x\":1,\"y\":0,\"depth\":1.76},{\"x\":2,\"y\":0,\"depth\":2.84},{\"x\":3,\"y\":0,\"depth\":2.63},{\"x\":4,\"y\":0,\"depth\":1.5},{\"x\":0,\"y\":1,\"depth\":2.7},{\"x\":1,\"y\":1,\"depth\":3.11},{\"x\":2,\"y\":1,\"depth\":1.81},{\"x\":3,\"y\":1,\"depth\":1.73},{\"x\":4,\"y\":1,\"depth\":2.29},{\"x\":0,\"y\":2,\"depth\":1.53},{\"x\":1,\"y\":2,\"depth\":1.8},{\"x\":2,\"y\":2,\"depth\":0.39},{\"x\":3,\"y\":2,\"depth\":2.78},{\"x\":4,\"y\":2,\"depth\":2.72},{\"x\":0,\"y\":3,\"depth\":0.68},{\"x\":1,\"y\":3,\"depth\":2.14},{\"x\":2,\"y\":3,\"depth\":2.52},{\"x\":3,\"y\":3,\"depth\":1.37},{\"x\":4,\"y\":3,\"depth\":0.47},{\"x\":0,\"y\":4,\"depth\":2.47},{\"x\":1,\"y\":4,\"depth\":1.23},{\"x\":2,\"y\":4,\"depth\":0.35},{\"x\":3,\"y\":4,\"depth\":1.17},{\"x\":4,\"y\":4,\"depth\":3.08}],\"peakProbability\":[{\"range\":\"<500\",\"probability\":0.08,\"count\":2},{\"range\":\"500-1000\",\"probability\":0.22,\"count\":5},{\"range\":\"1000-2000\",\"probability\":0.41,\"count\":9},{\"range\":\"2000-3000\",\"probability\":0.2,\"count\":4},{\"range\":\">3000\",\"probability\":0.09,\"count\":2}],\"completedAt\":\"2026-06-06T17:49:29.465Z\"}",
+      "deviation_rate": 0.23,
+      "logs_json": "[{\"timestamp\":\"2026-06-04T11:49:29.464Z\",\"stage\":\"pending\",\"message\":\"任务已创建\",\"type\":\"info\"},{\"timestamp\":\"2026-06-06T12:49:29.465Z\",\"stage\":\"preprocessing\",\"message\":\"数据预处理完成，已校验 DEM 与土壤文件\",\"type\":\"success\"},{\"timestamp\":\"2026-06-06T16:49:29.465Z\",\"stage\":\"completed\",\"message\":\"模拟完成，洪峰流量 18037 m³/s\",\"type\":\"success\"}]"
+    },
+    {
+      "id": "task-2",
+      "name": "渠江罗渡溪段·20年一遇模拟",
+      "basin_name": "渠江罗渡溪段",
+      "basin_area": 8700,
+      "created_at": "2026-06-04T17:49:29.470Z",
+      "status": "completed",
+      "progress": 100,
+      "rainfall_return_period": 20,
+      "time_window": "2026-06-01 ~ 2026-06-04",
+      "parameters_json": "{\"demResolution\":30,\"soilType\":\"壤土\",\"cnValue\":78,\"initialLoss\":8,\"recessionCoefficient\":0.92,\"routingVelocity\":2,\"manningN\":0.04}",
+      "result_json": "{\"id\":\"r-2\",\"taskId\":\"task-2\",\"peakDischarge\":3674,\"peakTime\":\"2026-06-06T15:49:29.470Z\",\"totalRunoffDepth\":64,\"floodVolume\":13226.4,\"inundationArea\":1044,\"hydrograph\":[{\"time\":\"2026-06-03T17:49:29.470Z\",\"value\":0.5},{\"time\":\"2026-06-03T18:49:29.470Z\",\"value\":0.8},{\"time\":\"2026-06-03T19:49:29.470Z\",\"value\":1.4},{\"time\":\"2026-06-03T20:49:29.470Z\",\"value\":2.5},{\"time\":\"2026-06-03T21:49:29.470Z\",\"value\":4.3},{\"time\":\"2026-06-03T22:49:29.470Z\",\"value\":7.1},{\"time\":\"2026-06-03T23:49:29.470Z\",\"value\":11.6},{\"time\":\"2026-06-04T00:49:29.470Z\",\"value\":18.5},{\"time\":\"2026-06-04T01:49:29.470Z\",\"value\":29.1},{\"time\":\"2026-06-04T02:49:29.470Z\",\"value\":44.7},{\"time\":\"2026-06-04T03:49:29.470Z\",\"value\":67.3},{\"time\":\"2026-06-04T04:49:29.470Z\",\"value\":99.4},{\"time\":\"2026-06-04T05:49:29.470Z\",\"value\":143.9},{\"time\":\"2026-06-04T06:49:29.470Z\",\"value\":204.2},{\"time\":\"2026-06-04T07:49:29.470Z\",\"value\":284},{\"time\":\"2026-06-04T08:49:29.470Z\",\"value\":387.2},{\"time\":\"2026-06-04T09:49:29.470Z\",\"value\":517.5},{\"time\":\"2026-06-04T10:49:29.470Z\",\"value\":677.9},{\"time\":\"2026-06-04T11:49:29.470Z\",\"value\":870.5},{\"time\":\"2026-06-04T12:49:29.470Z\",\"value\":1095.6},{\"time\":\"2026-06-04T13:49:29.470Z\",\"value\":1351.6},{\"time\":\"2026-06-04T14:49:29.470Z\",\"value\":1634.4},{\"time\":\"2026-06-04T15:49:29.470Z\",\"value\":1937.3},{\"time\":\"2026-06-04T16:49:29.470Z\",\"value\":2250.8},{\"time\":\"2026-06-04T17:49:29.470Z\",\"value\":2563.3},{\"time\":\"2026-06-04T18:49:29.470Z\",\"value\":2861.3},{\"time\":\"2026-06-04T19:49:29.470Z\",\"value\":3130.8},{\"time\":\"2026-06-04T20:49:29.470Z\",\"value\":3357.8},{\"time\":\"2026-06-04T21:49:29.470Z\",\"value\":3529.9},{\"time\":\"2026-06-04T22:49:29.470Z\",\"value\":3637.4},{\"time\":\"2026-06-04T23:49:29.470Z\",\"value\":3674},{\"time\":\"2026-06-05T00:49:29.470Z\",\"value\":3637.4},{\"time\":\"2026-06-05T01:49:29.470Z\",\"value\":3529.9},{\"time\":\"2026-06-05T02:49:29.470Z\",\"value\":3357.8},{\"time\":\"2026-06-05T03:49:29.470Z\",\"value\":3130.8},{\"time\":\"2026-06-05T04:49:29.470Z\",\"value\":2861.3},{\"time\":\"2026-06-05T05:49:29.470Z\",\"value\":2563.3},{\"time\":\"2026-06-05T06:49:29.470Z\",\"value\":2250.8},{\"time\":\"2026-06-05T07:49:29.470Z\",\"value\":1937.3},{\"time\":\"2026-06-05T08:49:29.470Z\",\"value\":1634.4},{\"time\":\"2026-06-05T09:49:29.470Z\",\"value\":1351.6},{\"time\":\"2026-06-05T10:49:29.470Z\",\"value\":1095.6},{\"time\":\"2026-06-05T11:49:29.470Z\",\"value\":870.5},{\"time\":\"2026-06-05T12:49:29.470Z\",\"value\":677.9},{\"time\":\"2026-06-05T13:49:29.470Z\",\"value\":517.5},{\"time\":\"2026-06-05T14:49:29.470Z\",\"value\":387.2},{\"time\":\"2026-06-05T15:49:29.470Z\",\"value\":284},{\"time\":\"2026-06-05T16:49:29.470Z\",\"value\":204.2},{\"time\":\"2026-06-05T17:49:29.470Z\",\"value\":143.9},{\"time\":\"2026-06-05T18:49:29.470Z\",\"value\":99.4},{\"time\":\"2026-06-05T19:49:29.470Z\",\"value\":67.3},{\"time\":\"2026-06-05T20:49:29.470Z\",\"value\":44.7},{\"time\":\"2026-06-05T21:49:29.470Z\",\"value\":29.1},{\"time\":\"2026-06-05T22:49:29.470Z\",\"value\":18.5},{\"time\":\"2026-06-05T23:49:29.470Z\",\"value\":11.6},{\"time\":\"2026-06-06T00:49:29.470Z\",\"value\":7.1},{\"time\":\"2026-06-06T01:49:29.470Z\",\"value\":4.3},{\"time\":\"2026-06-06T02:49:29.470Z\",\"value\":2.5},{\"time\":\"2026-06-06T03:49:29.470Z\",\"value\":1.4},{\"time\":\"2026-06-06T04:49:29.470Z\",\"value\":0.8},{\"time\":\"2026-06-06T05:49:29.470Z\",\"value\":0.5},{\"time\":\"2026-06-06T06:49:29.470Z\",\"value\":0.2},{\"time\":\"2026-06-06T07:49:29.470Z\",\"value\":0.1},{\"time\":\"2026-06-06T08:49:29.470Z\",\"value\":0.1},{\"time\":\"2026-06-06T09:49:29.470Z\",\"value\":0},{\"time\":\"2026-06-06T10:49:29.470Z\",\"value\":0},{\"time\":\"2026-06-06T11:49:29.470Z\",\"value\":0},{\"time\":\"2026-06-06T12:49:29.470Z\",\"value\":0},{\"time\":\"2026-06-06T13:49:29.470Z\",\"value\":0},{\"time\":\"2026-06-06T14:49:29.470Z\",\"value\":0},{\"time\":\"2026-06-06T15:49:29.470Z\",\"value\":0},{\"time\":\"2026-06-06T16:49:29.470Z\",\"value\":0}],\"inundationMap\":[{\"x\":0,\"y\":0,\"depth\":2.34},{\"x\":1,\"y\":0,\"depth\":0.3},{\"x\":2,\"y\":0,\"depth\":2.2},{\"x\":3,\"y\":0,\"depth\":1.13},{\"x\":4,\"y\":0,\"depth\":1.5},{\"x\":0,\"y\":1,\"depth\":0.89},{\"x\":1,\"y\":1,\"depth\":1.33},{\"x\":2,\"y\":1,\"depth\":1.09},{\"x\":3,\"y\":1,\"depth\":1.04},{\"x\":4,\"y\":1,\"depth\":1.51},{\"x\":0,\"y\":2,\"depth\":0.65},{\"x\":1,\"y\":2,\"depth\":1.79},{\"x\":2,\"y\":2,\"depth\":0.97},{\"x\":3,\"y\":2,\"depth\":1.2},{\"x\":4,\"y\":2,\"depth\":0.64},{\"x\":0,\"y\":3,\"depth\":2.29},{\"x\":1,\"y\":3,\"depth\":3.12},{\"x\":2,\"y\":3,\"depth\":1.59},{\"x\":3,\"y\":3,\"depth\":1.7},{\"x\":4,\"y\":3,\"depth\":2.25},{\"x\":0,\"y\":4,\"depth\":1.85},{\"x\":1,\"y\":4,\"depth\":1.47},{\"x\":2,\"y\":4,\"depth\":0.52},{\"x\":3,\"y\":4,\"depth\":0.5},{\"x\":4,\"y\":4,\"depth\":2.11}],\"peakProbability\":[{\"range\":\"<500\",\"probability\":0.08,\"count\":2},{\"range\":\"500-1000\",\"probability\":0.22,\"count\":5},{\"range\":\"1000-2000\",\"probability\":0.41,\"count\":9},{\"range\":\"2000-3000\",\"probability\":0.2,\"count\":4},{\"range\":\">3000\",\"probability\":0.09,\"count\":2}],\"completedAt\":\"2026-06-06T17:49:29.470Z\"}",
+      "deviation_rate": 0.12,
+      "logs_json": "[{\"timestamp\":\"2026-06-04T17:49:29.470Z\",\"stage\":\"pending\",\"message\":\"任务已创建\",\"type\":\"info\"},{\"timestamp\":\"2026-06-06T12:49:29.470Z\",\"stage\":\"preprocessing\",\"message\":\"数据预处理完成，已校验 DEM 与土壤文件\",\"type\":\"success\"},{\"timestamp\":\"2026-06-06T16:49:29.470Z\",\"stage\":\"completed\",\"message\":\"模拟完成，洪峰流量 3674 m³/s\",\"type\":\"success\"}]"
+    },
+    {
+      "id": "task-3",
+      "name": "渠江渠县段·10年一遇模拟",
+      "basin_name": "渠江渠县段",
+      "basin_area": 11200,
+      "created_at": "2026-06-04T23:49:29.475Z",
+      "status": "calculating",
+      "progress": 68,
+      "rainfall_return_period": 10,
+      "time_window": "2026-06-01 ~ 2026-06-04",
+      "parameters_json": "{\"demResolution\":30,\"soilType\":\"壤土\",\"cnValue\":81,\"initialLoss\":8,\"recessionCoefficient\":0.92,\"routingVelocity\":2,\"manningN\":0.04}",
+      "result_json": null,
+      "deviation_rate": null,
+      "logs_json": "[{\"timestamp\":\"2026-06-04T23:49:29.475Z\",\"stage\":\"pending\",\"message\":\"任务已创建\",\"type\":\"info\"},{\"timestamp\":\"2026-06-06T12:49:29.475Z\",\"stage\":\"preprocessing\",\"message\":\"数据预处理完成，已校验 DEM 与土壤文件\",\"type\":\"success\"}]"
+    },
+    {
+      "id": "task-4",
+      "name": "琼江潼南段·5年一遇模拟",
+      "basin_name": "琼江潼南段",
+      "basin_area": 4300,
+      "created_at": "2026-06-05T05:49:29.479Z",
+      "status": "routing",
+      "progress": 82,
+      "rainfall_return_period": 5,
+      "time_window": "2026-06-01 ~ 2026-06-04",
+      "parameters_json": "{\"demResolution\":30,\"soilType\":\"壤土\",\"cnValue\":72,\"initialLoss\":8,\"recessionCoefficient\":0.92,\"routingVelocity\":2,\"manningN\":0.04}",
+      "result_json": null,
+      "deviation_rate": null,
+      "logs_json": "[{\"timestamp\":\"2026-06-05T05:49:29.479Z\",\"stage\":\"pending\",\"message\":\"任务已创建\",\"type\":\"info\"},{\"timestamp\":\"2026-06-06T12:49:29.479Z\",\"stage\":\"preprocessing\",\"message\":\"数据预处理完成，已校验 DEM 与土壤文件\",\"type\":\"success\"}]"
+    },
+    {
+      "id": "task-5",
+      "name": "嘉陵江武胜段·100年一遇模拟",
+      "basin_name": "嘉陵江武胜段",
+      "basin_area": 23500,
+      "created_at": "2026-06-05T11:49:29.481Z",
+      "status": "preprocessing",
+      "progress": 18,
+      "rainfall_return_period": 100,
+      "time_window": "2026-06-01 ~ 2026-06-04",
+      "parameters_json": "{\"demResolution\":30,\"soilType\":\"壤土\",\"cnValue\":75,\"initialLoss\":8,\"recessionCoefficient\":0.92,\"routingVelocity\":2,\"manningN\":0.04}",
+      "result_json": null,
+      "deviation_rate": null,
+      "logs_json": "[{\"timestamp\":\"2026-06-05T11:49:29.481Z\",\"stage\":\"pending\",\"message\":\"任务已创建\",\"type\":\"info\"},{\"timestamp\":\"2026-06-06T12:49:29.481Z\",\"stage\":\"preprocessing\",\"message\":\"数据预处理完成，已校验 DEM 与土壤文件\",\"type\":\"success\"}]"
+    },
+    {
+      "id": "task-6",
+      "name": "涪江北碚段·50年一遇模拟",
+      "basin_name": "涪江北碚段",
+      "basin_area": 15800,
+      "created_at": "2026-06-05T17:49:29.485Z",
+      "status": "meshing",
+      "progress": 35,
+      "rainfall_return_period": 50,
+      "time_window": "2026-06-01 ~ 2026-06-04",
+      "parameters_json": "{\"demResolution\":30,\"soilType\":\"壤土\",\"cnValue\":78,\"initialLoss\":8,\"recessionCoefficient\":0.92,\"routingVelocity\":2,\"manningN\":0.04}",
+      "result_json": null,
+      "deviation_rate": null,
+      "logs_json": "[{\"timestamp\":\"2026-06-05T17:49:29.485Z\",\"stage\":\"pending\",\"message\":\"任务已创建\",\"type\":\"info\"},{\"timestamp\":\"2026-06-06T12:49:29.485Z\",\"stage\":\"preprocessing\",\"message\":\"数据预处理完成，已校验 DEM 与土壤文件\",\"type\":\"success\"}]"
+    },
+    {
+      "id": "task-7",
+      "name": "渠江罗渡溪段·20年一遇模拟",
+      "basin_name": "渠江罗渡溪段",
+      "basin_area": 8700,
+      "created_at": "2026-06-05T23:49:29.488Z",
+      "status": "pending",
+      "progress": 5,
+      "rainfall_return_period": 20,
+      "time_window": "2026-06-01 ~ 2026-06-04",
+      "parameters_json": "{\"demResolution\":30,\"soilType\":\"壤土\",\"cnValue\":81,\"initialLoss\":8,\"recessionCoefficient\":0.92,\"routingVelocity\":2,\"manningN\":0.04}",
+      "result_json": null,
+      "deviation_rate": null,
+      "logs_json": "[{\"timestamp\":\"2026-06-05T23:49:29.488Z\",\"stage\":\"pending\",\"message\":\"任务已创建\",\"type\":\"info\"}]"
+    },
+    {
+      "id": "task-8",
+      "name": "渠江渠县段·10年一遇模拟",
+      "basin_name": "渠江渠县段",
+      "basin_area": 11200,
+      "created_at": "2026-06-06T05:49:29.490Z",
+      "status": "completed",
+      "progress": 100,
+      "rainfall_return_period": 10,
+      "time_window": "2026-06-01 ~ 2026-06-04",
+      "parameters_json": "{\"demResolution\":30,\"soilType\":\"壤土\",\"cnValue\":72,\"initialLoss\":8,\"recessionCoefficient\":0.92,\"routingVelocity\":2,\"manningN\":0.04}",
+      "result_json": "{\"id\":\"r-8\",\"taskId\":\"task-8\",\"peakDischarge\":2096,\"peakTime\":\"2026-06-06T15:49:29.490Z\",\"totalRunoffDepth\":32,\"floodVolume\":7545.6,\"inundationArea\":1344,\"hydrograph\":[{\"time\":\"2026-06-03T17:49:29.490Z\",\"value\":0.3},{\"time\":\"2026-06-03T18:49:29.490Z\",\"value\":0.5},{\"time\":\"2026-06-03T19:49:29.490Z\",\"value\":0.8},{\"time\":\"2026-06-03T20:49:29.490Z\",\"value\":1.4},{\"time\":\"2026-06-03T21:49:29.490Z\",\"value\":2.4},{\"time\":\"2026-06-03T22:49:29.490Z\",\"value\":4},{\"time\":\"2026-06-03T23:49:29.490Z\",\"value\":6.6},{\"time\":\"2026-06-04T00:49:29.490Z\",\"value\":10.6},{\"time\":\"2026-06-04T01:49:29.490Z\",\"value\":16.6},{\"time\":\"2026-06-04T02:49:29.490Z\",\"value\":25.5},{\"time\":\"2026-06-04T03:49:29.490Z\",\"value\":38.4},{\"time\":\"2026-06-04T04:49:29.490Z\",\"value\":56.7},{\"time\":\"2026-06-04T05:49:29.490Z\",\"value\":82.1},{\"time\":\"2026-06-04T06:49:29.490Z\",\"value\":116.5},{\"time\":\"2026-06-04T07:49:29.490Z\",\"value\":162},{\"time\":\"2026-06-04T08:49:29.490Z\",\"value\":220.9},{\"time\":\"2026-06-04T09:49:29.490Z\",\"value\":295.2},{\"time\":\"2026-06-04T10:49:29.490Z\",\"value\":386.8},{\"time\":\"2026-06-04T11:49:29.490Z\",\"value\":496.6},{\"time\":\"2026-06-04T12:49:29.490Z\",\"value\":625},{\"time\":\"2026-06-04T13:49:29.490Z\",\"value\":771.1},{\"time\":\"2026-06-04T14:49:29.490Z\",\"value\":932.4},{\"time\":\"2026-06-04T15:49:29.490Z\",\"value\":1105.2},{\"time\":\"2026-06-04T16:49:29.490Z\",\"value\":1284.1},{\"time\":\"2026-06-04T17:49:29.490Z\",\"value\":1462.3},{\"time\":\"2026-06-04T18:49:29.490Z\",\"value\":1632.4},{\"time\":\"2026-06-04T19:49:29.490Z\",\"value\":1786.1},{\"time\":\"2026-06-04T20:49:29.490Z\",\"value\":1915.6},{\"time\":\"2026-06-04T21:49:29.490Z\",\"value\":2013.8},{\"time\":\"2026-06-04T22:49:29.490Z\",\"value\":2075.1},{\"time\":\"2026-06-04T23:49:29.490Z\",\"value\":2096},{\"time\":\"2026-06-05T00:49:29.490Z\",\"value\":2075.1},{\"time\":\"2026-06-05T01:49:29.490Z\",\"value\":2013.8},{\"time\":\"2026-06-05T02:49:29.490Z\",\"value\":1915.6},{\"time\":\"2026-06-05T03:49:29.490Z\",\"value\":1786.1},{\"time\":\"2026-06-05T04:49:29.490Z\",\"value\":1632.4},{\"time\":\"2026-06-05T05:49:29.490Z\",\"value\":1462.3},{\"time\":\"2026-06-05T06:49:29.490Z\",\"value\":1284.1},{\"time\":\"2026-06-05T07:49:29.490Z\",\"value\":1105.2},{\"time\":\"2026-06-05T08:49:29.490Z\",\"value\":932.4},{\"time\":\"2026-06-05T09:49:29.490Z\",\"value\":771.1},{\"time\":\"2026-06-05T10:49:29.490Z\",\"value\":625},{\"time\":\"2026-06-05T11:49:29.490Z\",\"value\":496.6},{\"time\":\"2026-06-05T12:49:29.490Z\",\"value\":386.8},{\"time\":\"2026-06-05T13:49:29.490Z\",\"value\":295.2},{\"time\":\"2026-06-05T14:49:29.490Z\",\"value\":220.9},{\"time\":\"2026-06-05T15:49:29.490Z\",\"value\":162},{\"time\":\"2026-06-05T16:49:29.490Z\",\"value\":116.5},{\"time\":\"2026-06-05T17:49:29.490Z\",\"value\":82.1},{\"time\":\"2026-06-05T18:49:29.490Z\",\"value\":56.7},{\"time\":\"2026-06-05T19:49:29.490Z\",\"value\":38.4},{\"time\":\"2026-06-05T20:49:29.491Z\",\"value\":25.5},{\"time\":\"2026-06-05T21:49:29.491Z\",\"value\":16.6},{\"time\":\"2026-06-05T22:49:29.491Z\",\"value\":10.6},{\"time\":\"2026-06-05T23:49:29.491Z\",\"value\":6.6},{\"time\":\"2026-06-06T00:49:29.491Z\",\"value\":4},{\"time\":\"2026-06-06T01:49:29.491Z\",\"value\":2.4},{\"time\":\"2026-06-06T02:49:29.491Z\",\"value\":1.4},{\"time\":\"2026-06-06T03:49:29.491Z\",\"value\":0.8},{\"time\":\"2026-06-06T04:49:29.491Z\",\"value\":0.5},{\"time\":\"2026-06-06T05:49:29.491Z\",\"value\":0.3},{\"time\":\"2026-06-06T06:49:29.491Z\",\"value\":0.1},{\"time\":\"2026-06-06T07:49:29.491Z\",\"value\":0.1},{\"time\":\"2026-06-06T08:49:29.491Z\",\"value\":0},{\"time\":\"2026-06-06T09:49:29.491Z\",\"value\":0},{\"time\":\"2026-06-06T10:49:29.491Z\",\"value\":0},{\"time\":\"2026-06-06T11:49:29.491Z\",\"value\":0},{\"time\":\"2026-06-06T12:49:29.491Z\",\"value\":0},{\"time\":\"2026-06-06T13:49:29.491Z\",\"value\":0},{\"time\":\"2026-06-06T14:49:29.491Z\",\"value\":0},{\"time\":\"2026-06-06T15:49:29.491Z\",\"value\":0},{\"time\":\"2026-06-06T16:49:29.491Z\",\"value\":0}],\"inundationMap\":[{\"x\":0,\"y\":0,\"depth\":0.63},{\"x\":1,\"y\":0,\"depth\":2.24},{\"x\":2,\"y\":0,\"depth\":2.48},{\"x\":3,\"y\":0,\"depth\":3.28},{\"x\":4,\"y\":0,\"depth\":0.46},{\"x\":0,\"y\":1,\"depth\":2.82},{\"x\":1,\"y\":1,\"depth\":0.48},{\"x\":2,\"y\":1,\"depth\":2.81},{\"x\":3,\"y\":1,\"depth\":1.7},{\"x\":4,\"y\":1,\"depth\":0.58},{\"x\":0,\"y\":2,\"depth\":1.3},{\"x\":1,\"y\":2,\"depth\":2.71},{\"x\":2,\"y\":2,\"depth\":0.89},{\"x\":3,\"y\":2,\"depth\":1.22},{\"x\":4,\"y\":2,\"depth\":3.23},{\"x\":0,\"y\":3,\"depth\":2.99},{\"x\":1,\"y\":3,\"depth\":1.13},{\"x\":2,\"y\":3,\"depth\":0.51},{\"x\":3,\"y\":3,\"depth\":2.92},{\"x\":4,\"y\":3,\"depth\":1.3},{\"x\":0,\"y\":4,\"depth\":1.4},{\"x\":1,\"y\":4,\"depth\":2.92},{\"x\":2,\"y\":4,\"depth\":1.21},{\"x\":3,\"y\":4,\"depth\":1.99},{\"x\":4,\"y\":4,\"depth\":1.15}],\"peakProbability\":[{\"range\":\"<500\",\"probability\":0.08,\"count\":2},{\"range\":\"500-1000\",\"probability\":0.22,\"count\":5},{\"range\":\"1000-2000\",\"probability\":0.41,\"count\":9},{\"range\":\"2000-3000\",\"probability\":0.2,\"count\":4},{\"range\":\">3000\",\"probability\":0.09,\"count\":2}],\"completedAt\":\"2026-06-06T17:49:29.491Z\"}",
+      "deviation_rate": 0.05,
+      "logs_json": "[{\"timestamp\":\"2026-06-06T05:49:29.490Z\",\"stage\":\"pending\",\"message\":\"任务已创建\",\"type\":\"info\"},{\"timestamp\":\"2026-06-06T12:49:29.491Z\",\"stage\":\"preprocessing\",\"message\":\"数据预处理完成，已校验 DEM 与土壤文件\",\"type\":\"success\"},{\"timestamp\":\"2026-06-06T16:49:29.491Z\",\"stage\":\"completed\",\"message\":\"模拟完成，洪峰流量 2096 m³/s\",\"type\":\"success\"}]"
+    },
+    {
+      "id": "task-9",
+      "name": "琼江潼南段·30年一遇模拟",
+      "basin_name": "琼江潼南段",
+      "basin_area": 4300,
+      "created_at": "2026-06-06T11:49:29.494Z",
+      "status": "error",
+      "progress": 62,
+      "rainfall_return_period": 30,
+      "time_window": "2026-06-01 ~ 2026-06-04",
+      "parameters_json": "{\"demResolution\":30,\"soilType\":\"壤土\",\"cnValue\":75,\"initialLoss\":8,\"recessionCoefficient\":0.92,\"routingVelocity\":2,\"manningN\":0.04}",
+      "result_json": null,
+      "deviation_rate": null,
+      "logs_json": "[{\"timestamp\":\"2026-06-06T11:49:29.494Z\",\"stage\":\"pending\",\"message\":\"任务已创建\",\"type\":\"info\"},{\"timestamp\":\"2026-06-06T12:49:29.494Z\",\"stage\":\"preprocessing\",\"message\":\"数据预处理完成，已校验 DEM 与土壤文件\",\"type\":\"success\"},{\"timestamp\":\"2026-06-06T15:49:29.494Z\",\"stage\":\"calculating\",\"message\":\"径流计算失败：降雨序列缺失关键时段数据\",\"type\":\"error\"}]"
+    }
+  ],
+  "files": [],
+  "sections": [
+    {
+      "id": "sec-0-0",
+      "task_id": "task-0",
+      "name": "武胜站",
+      "river_km": 120,
+      "warning_level": 183.14,
+      "guaranteed_level": 188.5
+    },
+    {
+      "id": "sec-0-1",
+      "task_id": "task-0",
+      "name": "北碚站",
+      "river_km": 80,
+      "warning_level": 194.56,
+      "guaranteed_level": 199.2
+    },
+    {
+      "id": "sec-0-2",
+      "task_id": "task-0",
+      "name": "罗渡溪站",
+      "river_km": 56,
+      "warning_level": 198.12,
+      "guaranteed_level": 203.5
+    },
+    {
+      "id": "sec-0-3",
+      "task_id": "task-0",
+      "name": "渠县站",
+      "river_km": 40,
+      "warning_level": 181.36,
+      "guaranteed_level": 187
+    },
+    {
+      "id": "sec-1-0",
+      "task_id": "task-1",
+      "name": "武胜站",
+      "river_km": 120,
+      "warning_level": 183.14,
+      "guaranteed_level": 188.5
+    },
+    {
+      "id": "sec-1-1",
+      "task_id": "task-1",
+      "name": "北碚站",
+      "river_km": 80,
+      "warning_level": 194.56,
+      "guaranteed_level": 199.2
+    },
+    {
+      "id": "sec-1-2",
+      "task_id": "task-1",
+      "name": "罗渡溪站",
+      "river_km": 56,
+      "warning_level": 198.12,
+      "guaranteed_level": 203.5
+    },
+    {
+      "id": "sec-1-3",
+      "task_id": "task-1",
+      "name": "渠县站",
+      "river_km": 40,
+      "warning_level": 181.36,
+      "guaranteed_level": 187
+    },
+    {
+      "id": "sec-2-0",
+      "task_id": "task-2",
+      "name": "武胜站",
+      "river_km": 120,
+      "warning_level": 183.14,
+      "guaranteed_level": 188.5
+    },
+    {
+      "id": "sec-2-1",
+      "task_id": "task-2",
+      "name": "北碚站",
+      "river_km": 80,
+      "warning_level": 194.56,
+      "guaranteed_level": 199.2
+    },
+    {
+      "id": "sec-2-2",
+      "task_id": "task-2",
+      "name": "罗渡溪站",
+      "river_km": 56,
+      "warning_level": 198.12,
+      "guaranteed_level": 203.5
+    },
+    {
+      "id": "sec-2-3",
+      "task_id": "task-2",
+      "name": "渠县站",
+      "river_km": 40,
+      "warning_level": 181.36,
+      "guaranteed_level": 187
+    },
+    {
+      "id": "sec-3-0",
+      "task_id": "task-3",
+      "name": "武胜站",
+      "river_km": 120,
+      "warning_level": 183.14,
+      "guaranteed_level": 188.5
+    },
+    {
+      "id": "sec-3-1",
+      "task_id": "task-3",
+      "name": "北碚站",
+      "river_km": 80,
+      "warning_level": 194.56,
+      "guaranteed_level": 199.2
+    },
+    {
+      "id": "sec-3-2",
+      "task_id": "task-3",
+      "name": "罗渡溪站",
+      "river_km": 56,
+      "warning_level": 198.12,
+      "guaranteed_level": 203.5
+    },
+    {
+      "id": "sec-3-3",
+      "task_id": "task-3",
+      "name": "渠县站",
+      "river_km": 40,
+      "warning_level": 181.36,
+      "guaranteed_level": 187
+    },
+    {
+      "id": "sec-4-0",
+      "task_id": "task-4",
+      "name": "武胜站",
+      "river_km": 120,
+      "warning_level": 183.14,
+      "guaranteed_level": 188.5
+    },
+    {
+      "id": "sec-4-1",
+      "task_id": "task-4",
+      "name": "北碚站",
+      "river_km": 80,
+      "warning_level": 194.56,
+      "guaranteed_level": 199.2
+    },
+    {
+      "id": "sec-4-2",
+      "task_id": "task-4",
+      "name": "罗渡溪站",
+      "river_km": 56,
+      "warning_level": 198.12,
+      "guaranteed_level": 203.5
+    },
+    {
+      "id": "sec-4-3",
+      "task_id": "task-4",
+      "name": "渠县站",
+      "river_km": 40,
+      "warning_level": 181.36,
+      "guaranteed_level": 187
+    },
+    {
+      "id": "sec-5-0",
+      "task_id": "task-5",
+      "name": "武胜站",
+      "river_km": 120,
+      "warning_level": 183.14,
+      "guaranteed_level": 188.5
+    },
+    {
+      "id": "sec-5-1",
+      "task_id": "task-5",
+      "name": "北碚站",
+      "river_km": 80,
+      "warning_level": 194.56,
+      "guaranteed_level": 199.2
+    },
+    {
+      "id": "sec-5-2",
+      "task_id": "task-5",
+      "name": "罗渡溪站",
+      "river_km": 56,
+      "warning_level": 198.12,
+      "guaranteed_level": 203.5
+    },
+    {
+      "id": "sec-5-3",
+      "task_id": "task-5",
+      "name": "渠县站",
+      "river_km": 40,
+      "warning_level": 181.36,
+      "guaranteed_level": 187
+    },
+    {
+      "id": "sec-6-0",
+      "task_id": "task-6",
+      "name": "武胜站",
+      "river_km": 120,
+      "warning_level": 183.14,
+      "guaranteed_level": 188.5
+    },
+    {
+      "id": "sec-6-1",
+      "task_id": "task-6",
+      "name": "北碚站",
+      "river_km": 80,
+      "warning_level": 194.56,
+      "guaranteed_level": 199.2
+    },
+    {
+      "id": "sec-6-2",
+      "task_id": "task-6",
+      "name": "罗渡溪站",
+      "river_km": 56,
+      "warning_level": 198.12,
+      "guaranteed_level": 203.5
+    },
+    {
+      "id": "sec-6-3",
+      "task_id": "task-6",
+      "name": "渠县站",
+      "river_km": 40,
+      "warning_level": 181.36,
+      "guaranteed_level": 187
+    },
+    {
+      "id": "sec-7-0",
+      "task_id": "task-7",
+      "name": "武胜站",
+      "river_km": 120,
+      "warning_level": 183.14,
+      "guaranteed_level": 188.5
+    },
+    {
+      "id": "sec-7-1",
+      "task_id": "task-7",
+      "name": "北碚站",
+      "river_km": 80,
+      "warning_level": 194.56,
+      "guaranteed_level": 199.2
+    },
+    {
+      "id": "sec-7-2",
+      "task_id": "task-7",
+      "name": "罗渡溪站",
+      "river_km": 56,
+      "warning_level": 198.12,
+      "guaranteed_level": 203.5
+    },
+    {
+      "id": "sec-7-3",
+      "task_id": "task-7",
+      "name": "渠县站",
+      "river_km": 40,
+      "warning_level": 181.36,
+      "guaranteed_level": 187
+    },
+    {
+      "id": "sec-8-0",
+      "task_id": "task-8",
+      "name": "武胜站",
+      "river_km": 120,
+      "warning_level": 183.14,
+      "guaranteed_level": 188.5
+    },
+    {
+      "id": "sec-8-1",
+      "task_id": "task-8",
+      "name": "北碚站",
+      "river_km": 80,
+      "warning_level": 194.56,
+      "guaranteed_level": 199.2
+    },
+    {
+      "id": "sec-8-2",
+      "task_id": "task-8",
+      "name": "罗渡溪站",
+      "river_km": 56,
+      "warning_level": 198.12,
+      "guaranteed_level": 203.5
+    },
+    {
+      "id": "sec-8-3",
+      "task_id": "task-8",
+      "name": "渠县站",
+      "river_km": 40,
+      "warning_level": 181.36,
+      "guaranteed_level": 187
+    },
+    {
+      "id": "sec-9-0",
+      "task_id": "task-9",
+      "name": "武胜站",
+      "river_km": 120,
+      "warning_level": 183.14,
+      "guaranteed_level": 188.5
+    },
+    {
+      "id": "sec-9-1",
+      "task_id": "task-9",
+      "name": "北碚站",
+      "river_km": 80,
+      "warning_level": 194.56,
+      "guaranteed_level": 199.2
+    },
+    {
+      "id": "sec-9-2",
+      "task_id": "task-9",
+      "name": "罗渡溪站",
+      "river_km": 56,
+      "warning_level": 198.12,
+      "guaranteed_level": 203.5
+    },
+    {
+      "id": "sec-9-3",
+      "task_id": "task-9",
+      "name": "渠县站",
+      "river_km": 40,
+      "warning_level": 181.36,
+      "guaranteed_level": 187
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert-0-0",
+      "task_id": "task-0",
+      "section_id": "sec-0-0",
+      "section_name": "武胜站",
+      "level": "blue",
+      "type": "water_level",
+      "value": 183.64,
+      "threshold": 183.14,
+      "triggered_at": "2026-06-06T17:19:29.460Z",
+      "reviewed": 0,
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_comment": null
+    },
+    {
+      "id": "alert-0-2",
+      "task_id": "task-0",
+      "section_id": "sec-0-2",
+      "section_name": "罗渡溪站",
+      "level": "orange",
+      "type": "water_level",
+      "value": 200.12,
+      "threshold": 198.12,
+      "triggered_at": "2026-06-06T16:19:29.462Z",
+      "reviewed": 0,
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_comment": null
+    },
+    {
+      "id": "alert-1-1",
+      "task_id": "task-1",
+      "section_id": "sec-1-1",
+      "section_name": "北碚站",
+      "level": "orange",
+      "type": "rising_rate",
+      "value": 196.56,
+      "threshold": 194.56,
+      "triggered_at": "2026-06-06T16:49:29.466Z",
+      "reviewed": 0,
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_comment": null
+    },
+    {
+      "id": "alert-1-3",
+      "task_id": "task-1",
+      "section_id": "sec-1-3",
+      "section_name": "渠县站",
+      "level": "blue",
+      "type": "rising_rate",
+      "value": 181.86,
+      "threshold": 181.36,
+      "triggered_at": "2026-06-06T15:49:29.468Z",
+      "reviewed": 0,
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_comment": null
+    },
+    {
+      "id": "alert-2-0",
+      "task_id": "task-2",
+      "section_id": "sec-2-0",
+      "section_name": "武胜站",
+      "level": "orange",
+      "type": "water_level",
+      "value": 185.14,
+      "threshold": 183.14,
+      "triggered_at": "2026-06-06T17:19:29.471Z",
+      "reviewed": 1,
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_comment": null
+    },
+    {
+      "id": "alert-2-2",
+      "task_id": "task-2",
+      "section_id": "sec-2-2",
+      "section_name": "罗渡溪站",
+      "level": "blue",
+      "type": "water_level",
+      "value": 198.62,
+      "threshold": 198.12,
+      "triggered_at": "2026-06-06T16:19:29.473Z",
+      "reviewed": 1,
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "review_comment": null
+    }
+  ],
+  "approvals": [
+    {
+      "id": "appr-0",
+      "task_id": "task-0",
+      "engineer_id": "u-engineer",
+      "engineer_name": "王工程师",
+      "engineer_comment": "模型Nash效率系数0.87，模拟精度良好",
+      "engineer_approved_at": "2026-06-06T13:49:29.463Z",
+      "accuracy_score": 0.85,
+      "chief_id": "u-chief",
+      "chief_name": "陈总工",
+      "chief_comment": "精度符合要求，同意入库",
+      "chief_approved_at": "2026-06-06T15:49:29.463Z",
+      "status": "approved"
+    },
+    {
+      "id": "appr-1",
+      "task_id": "task-1",
+      "engineer_id": "u-engineer",
+      "engineer_name": "王工程师",
+      "engineer_comment": "模型Nash效率系数0.87，模拟精度良好",
+      "engineer_approved_at": "2026-06-06T13:49:29.469Z",
+      "accuracy_score": 0.87,
+      "chief_id": "u-chief",
+      "chief_name": "陈总工",
+      "chief_comment": "精度符合要求，同意入库",
+      "chief_approved_at": "2026-06-06T15:49:29.469Z",
+      "status": "approved"
+    },
+    {
+      "id": "appr-2",
+      "task_id": "task-2",
+      "engineer_id": "u-engineer",
+      "engineer_name": "王工程师",
+      "engineer_comment": "模型Nash效率系数0.87，模拟精度良好",
+      "engineer_approved_at": "2026-06-06T13:49:29.474Z",
+      "accuracy_score": 0.89,
+      "chief_id": null,
+      "chief_name": null,
+      "chief_comment": "精度符合要求，同意入库",
+      "chief_approved_at": null,
+      "status": "chief_pending"
+    }
+  ],
+  "dispatchPlans": [
+    {
+      "id": "plan-0",
+      "task_id": "task-0",
+      "task_name": "嘉陵江武胜段·50年一遇模拟",
+      "alert_id": "alert-0-0",
+      "type": "reservoir",
+      "reservoir_name": "草街水库",
+      "release_rate": 1200,
+      "diversion_area": null,
+      "diversion_volume": 0,
+      "estimated_effect": "预计将武胜站水位降低 0.8-1.2m",
+      "created_at": "2026-06-06T16:49:29.464Z",
+      "status": "approved"
+    },
+    {
+      "id": "plan-1",
+      "task_id": "task-1",
+      "task_name": "涪江北碚段·100年一遇模拟",
+      "alert_id": "alert-1-0",
+      "type": "flood_diversion",
+      "reservoir_name": null,
+      "release_rate": 0,
+      "diversion_area": "太和分洪区",
+      "diversion_volume": 900,
+      "estimated_effect": "预计分洪量约 800 万 m³，降低北碚站水位 0.6m",
+      "created_at": "2026-06-06T16:49:29.469Z",
+      "status": "chief_pending"
+    },
+    {
+      "id": "plan-2",
+      "task_id": "task-2",
+      "task_name": "渠江罗渡溪段·20年一遇模拟",
+      "alert_id": "alert-2-0",
+      "type": "reservoir",
+      "reservoir_name": "草街水库",
+      "release_rate": 1300,
+      "diversion_area": null,
+      "diversion_volume": 0,
+      "estimated_effect": "预计将武胜站水位降低 0.8-1.2m",
+      "created_at": "2026-06-06T16:49:29.475Z",
+      "status": "draft"
+    }
+  ],
+  "dispatchRules": [
+    {
+      "id": "rule-0",
+      "name": "北碚站超警调度",
+      "basin_name": "涪江北碚段",
+      "trigger_condition": "北碚站水位≥194.56m",
+      "action": "草街水库控泄≤1500m³/s",
+      "confidence": 0.91,
+      "usage_count": 8,
+      "last_used_at": "2026-06-06T17:49:29.496Z"
+    },
+    {
+      "id": "rule-1",
+      "name": "武胜站分洪预案",
+      "basin_name": "嘉陵江武胜段",
+      "trigger_condition": "武胜站水位≥188.50m",
+      "action": "启用太和分洪区",
+      "confidence": 0.87,
+      "usage_count": 11,
+      "last_used_at": "2026-06-05T17:49:29.497Z"
+    },
+    {
+      "id": "rule-2",
+      "name": "渠江双控调度",
+      "basin_name": "渠江罗渡溪段",
+      "trigger_condition": "罗渡溪站上涨速率≥1.0m/h",
+      "action": "减小江口水库下泄+启动预泄",
+      "confidence": 0.83,
+      "usage_count": 14,
+      "last_used_at": "2026-06-04T17:49:29.498Z"
+    },
+    {
+      "id": "rule-3",
+      "name": "渠县站应急调度",
+      "basin_name": "渠江渠县段",
+      "trigger_condition": "渠县站水位≥187.00m",
+      "action": "上游水库联合错峰",
+      "confidence": 0.79,
+      "usage_count": 17,
+      "last_used_at": "2026-06-03T17:49:29.499Z"
+    },
+    {
+      "id": "rule-4",
+      "name": "琼江梯级调度",
+      "basin_name": "琼江潼南段",
+      "trigger_condition": "潼南站流量≥800m³/s",
+      "action": "梯级水库削峰调度",
+      "confidence": 0.74,
+      "usage_count": 20,
+      "last_used_at": "2026-06-02T17:49:29.500Z"
+    }
+  ],
+  "dailyStats": [
+    {
+      "date": "2026-05-31",
+      "total_tasks": 8,
+      "completed_tasks": 6,
+      "completion_rate": 0.72,
+      "avg_lead_time": 3.2,
+      "forecast_accuracy": 0.78,
+      "alerts_count": 3
+    },
+    {
+      "date": "2026-06-01",
+      "total_tasks": 9,
+      "completed_tasks": 7,
+      "completion_rate": 0.77,
+      "avg_lead_time": 3.7,
+      "forecast_accuracy": 0.8200000000000001,
+      "alerts_count": 5
+    },
+    {
+      "date": "2026-06-02",
+      "total_tasks": 10,
+      "completed_tasks": 6,
+      "completion_rate": 0.82,
+      "avg_lead_time": 4.2,
+      "forecast_accuracy": 0.86,
+      "alerts_count": 7
+    },
+    {
+      "date": "2026-06-03",
+      "total_tasks": 8,
+      "completed_tasks": 7,
+      "completion_rate": 0.87,
+      "avg_lead_time": 3.2,
+      "forecast_accuracy": 0.78,
+      "alerts_count": 9
+    },
+    {
+      "date": "2026-06-04",
+      "total_tasks": 9,
+      "completed_tasks": 6,
+      "completion_rate": 0.72,
+      "avg_lead_time": 3.7,
+      "forecast_accuracy": 0.8200000000000001,
+      "alerts_count": 3
+    },
+    {
+      "date": "2026-06-05",
+      "total_tasks": 10,
+      "completed_tasks": 7,
+      "completion_rate": 0.77,
+      "avg_lead_time": 4.2,
+      "forecast_accuracy": 0.86,
+      "alerts_count": 5
+    },
+    {
+      "date": "2026-06-06",
+      "total_tasks": 8,
+      "completed_tasks": 6,
+      "completion_rate": 0.82,
+      "avg_lead_time": 3.2,
+      "forecast_accuracy": 0.78,
+      "alerts_count": 7
+    }
+  ],
+  "sectionSeries": []
+}

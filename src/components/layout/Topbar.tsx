@@ -1,10 +1,15 @@
-import { Bell, Search, Clock, RefreshCw } from 'lucide-react';
+import { Bell, Search, Clock, RefreshCw, AlertOctagon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { formatDate } from '@/utils/format';
 import { useAppStore } from '@/store/useAppStore';
 
-export function Topbar() {
+interface TopbarProps {
+  error?: string | null;
+}
+
+export function Topbar({ error }: TopbarProps) {
   const [now, setNow] = useState(new Date());
+  const hydrate = useAppStore((s) => s.hydrate);
   const pendingAlertCount = useAppStore((s) => {
     let count = 0;
     for (let i = 0; i < s.alerts.length; i++) {
@@ -12,11 +17,18 @@ export function Topbar() {
     }
     return count;
   });
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     const t = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(t);
   }, []);
+
+  const onRefresh = async () => {
+    setRefreshing(true);
+    await hydrate();
+    setTimeout(() => setRefreshing(false), 500);
+  };
 
   return (
     <header className="h-14 bg-surface border-b border-surface-border flex items-center justify-between px-6 shrink-0">
@@ -29,6 +41,12 @@ export function Topbar() {
             className="pl-9 pr-4 py-1.5 w-72 bg-surface-elevated border border-surface-border rounded-md text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-hydra-500 focus:border-hydra-500/50 transition-all"
           />
         </div>
+        {error && (
+          <div className="flex items-center gap-2 px-3 py-1 rounded-md bg-alert-red/10 border border-alert-red/30 text-alert-red text-xs">
+            <AlertOctagon className="w-3.5 h-3.5" />
+            {error}
+          </div>
+        )}
       </div>
 
       <div className="flex items-center gap-5">
@@ -46,8 +64,11 @@ export function Topbar() {
           )}
         </button>
 
-        <button className="p-2 rounded-md text-slate-400 hover:text-hydra-300 hover:bg-surface-elevated transition-all group">
-          <RefreshCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+        <button
+          onClick={onRefresh}
+          className="p-2 rounded-md text-slate-400 hover:text-hydra-300 hover:bg-surface-elevated transition-all group"
+        >
+          <RefreshCw className={`w-5 h-5 transition-transform duration-500 ${refreshing ? 'animate-spin' : 'group-hover:rotate-180'}`} />
         </button>
       </div>
     </header>
